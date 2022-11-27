@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      { 
+        "type": "shell",
+        "label": "Clean Project",
+        "command": "rm -rf build/*",
+        "options" : {
+          "cwd" : "${workspaceFolder}"
+        },
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        }
+      },
+      { 
+        "type": "shell",
+        "label": "Build DEBUG",
+        "command": "cmake -DPICO_BOARD=pico_w -DCMAKE_BUILD_TYPE=Debug ..;make",
+        "options" : {
+          "cwd" : "${workspaceFolder}/build"
+        },
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        }
+      },
+
+      { 
+          "type": "shell",
+          "label": "Build RELEASE",
+        "command": "cmake -DPICO_BOARD=pico_w -DCMAKE_BUILD_TYPE=Release ..;make",
+        "options" : {
+          "cwd" : "${workspaceFolder}/build"
+        },
+        "group": {
+            "kind": "build",
+            "isDefault": false
+        }
+      }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${env:PICO_SDK_PATH}/**",
+                // "${workspaceFolder}/../pico-sdk/src/boards/include/boards",
+                // "${workspaceFolder}/../pico-sdk/src/rp2_common/pico_cyw43_arch/",
+                // "${workspaceFolder}/../pico-sdk/src/rp2_common/pico_cyw43_arch/include",
+                // "${workspaceFolder}/../pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico",
+                // "${workspaceFolder}/../pico-sdk/src/common/pico_stdlib",
+                // "${workspaceFolder}/../pico-sdk/src/common/pico_stdlib/include",
+                // "${workspaceFolder}/../pico-sdk/src/common/pico_stdlib/include/pico",
+                "${workspaceFolder}/freertos",
+                "${workspaceFolder}/freertos/FreeRTOS-Kernel",
+                "${workspaceFolder}/freertos/FreeRTOS-Kernel/include",
+                "${workspaceFolder}/freertos/FreeRTOS-Kernel/portable/GCC/ARM_CM0"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/opt/homebrew/bin/arm-none-eabi-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-gcc-arm",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,6 @@
+**/FreeRTOS-Kernel/
+**/.DS_Store
+**/build/
+**/.cortex-debug**
+**.code-workspace
+
