@@ -23,7 +23,7 @@
             "postRestartCommands": [
                 "break main",
                 "continue"
-                ]
+            ]
         }
     ]
 }
