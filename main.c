@@ -10,9 +10,9 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-#include "stdlib.h"
-#include "cyw43_arch.h"
-#include "pico_w.h"
+#include "pico/stdlib.h"        // 'pico/' required for cmake to build pico lib without error
+#include "pico/cyw43_arch.h"    // 'pico/' required for cmake to build pico lib without error
+#include "boards/pico_w.h"      // 'boards/' required for cmake to build pico lib without error
 
 void led_task( void * ptr )
 {
