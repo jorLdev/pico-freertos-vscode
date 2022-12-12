@@ -3,4 +3,4 @@
 **/build/
 **/.cortex-debug**
 **.code-workspace
-
+pico_sdk_import.cmake
