@@ -1,3 +1,5 @@
+# Building the Development Environment
+
 The goal here is to build the development system that can be used for cross-target development on Cortex-M devices. This will be done on Visual Studio Code. 
 
 [MeowWorkshop](https://www.meoworkshop.org/firmware-dev-with-vs-code-and-cmake/) offers a nice brekdown of the setting up cmake, build tasks in vscode, and little on setting up debugging. This was on of the main resources, though others were used to supplement various sections.
