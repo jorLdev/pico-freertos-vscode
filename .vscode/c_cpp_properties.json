@@ -4,7 +4,7 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                
+
                 "${env:PICO_SDK_PATH}/**",
                 "${env:PICO_SDK_PATH}/src/boards/include/boards",
                 "${env:PICO_SDK_PATH}/src/rp2_common/pico_cyw43_arch",
@@ -59,7 +59,7 @@
             "macFrameworkPath": [
                 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks"
             ],
-            "compilerPath": "/opt/homebrew/bin/arm-none-eabi-gcc",
+            "compilerPath": "${env:GCC_ARM_PATH}/arm-none-eabi-gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-gcc-arm",

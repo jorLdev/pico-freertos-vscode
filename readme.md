@@ -2,7 +2,7 @@
 
 The goal here is to build the development system that can be used for cross-target development on Cortex-M devices. This will be done on Visual Studio Code. 
 
-[MeowWorkshop](https://www.meoworkshop.org/firmware-dev-with-vs-code-and-cmake/) offers a nice brekdown of the setting up cmake, build tasks in vscode, and little on setting up debugging. This was on of the main resources, though others were used to supplement various sections.
+[MeowWorkshop](https://www.meoworkshop.org/firmware-dev-with-vs-code-and-cmake/) offers a nice brekdown of the setting up cmake, build tasks in vscode, and little on setting up debugging. This was one of the main resources, though others were used to supplement various sections.
 
 The key steps include:
 - Installing Tools
@@ -11,6 +11,7 @@ The key steps include:
 	- [pico-examples](https://github.com/raspberrypi/pico-examples)
 	- [FreeRTOS](https://github.com/FreeRTOS/FreeRTOS-Kernel)
 	- CMake
+- Setting up system vars
 - Starting the VSCode Project
 - Integrating pico-sdk
 - Setting up the CMake Build System
@@ -18,6 +19,45 @@ The key steps include:
 - Integrating FreeRTOS
 - Setting up VSCode Debugging for Pico W
 - 
+
+## Setting Up Your System
+
+Each OS (e.g. Windows, MacOS, Linux) require their own unique setups. Some of those necessities are presented below.
+
+### Windows
+
+Here's some tool's you'll need to install
+1. [CMake](https://cmake.org/download/)
+1. [Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/)
+    - This is installed through the Visual Studio Installer app
+1. [Git](https://git-scm.com/download/win)
+1. [ARM GCC Compiler](https://developer.arm.com/downloads/-/gnu-rm)
+
+This youtube [vid](https://www.youtube.com/watch?v=mUF9xjDtFfY&t=403s) provides a good run down of all the tools you'll need to intall.
+
+
+### MacOS
+
+You'll need to stall a number of tools, like on Windows. However, this tutorial suggests using the [Homebrew](https://brew.sh) package manager, install instructions can be found at the link provided.
+
+Once installed, install the following packages:
+1. cmake
+1. gcc-arm-embedded (cask)
+
+NOTE: Git should already be installed (comes with MacOS)
+
+
+### System Vars
+
+Some system vars need to be installed. The provided VSCode resources are being built to be OS-agnostic and user-agnostic. This is because some resources could be different on a given system or for a given user. For Windows, 
+
+1. PICO_SDK_PATH
+	- set this to the path to the root path of the pico lib
+1. GCC_ARM_PATH
+	- set this to the folder with the arm-gcc compiler
+1. SEGGER_PATH
+	- set this to the filder with all Segger tools (e.g. JLink)
+
 
 ## Setting up VSCode
 
@@ -27,6 +67,10 @@ VSCode does a really good job of suggesting new extensions as it notices the fil
 - [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
 - [C/C++ Themes](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-themes) (optional)
 - [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
+
+> ISSUE
+>
+> On Windows machines, you'll need to start VSCode from a specific shell: Developer Command Prompt. This is a tool that is installed with the other *Build Tools for Visual Studio*. Opening the project, into VSCode, from this shell will setup VSCode to use it's environmental variables.
 
 ## Creating Build Tasks
 
