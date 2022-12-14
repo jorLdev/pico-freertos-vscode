@@ -44,7 +44,8 @@ Here's some tool's you'll need to install
 1. [Git](https://git-scm.com/download/win)
 1. [ARM GCC Compiler](https://developer.arm.com/downloads/-/gnu-rm)
 
-This youtube [vid](https://www.youtube.com/watch?v=mUF9xjDtFfY&t=403s) provides a good run down of all the tools you'll need to intall.
+This youtube [vid](https://www.youtube.com/watch?v=mUF9xjDtFfY&t=403s) provides a good run down of all the tools you'll need to intall. This [Windows Setup Tutorial](https://vanhunteradams.com/Pico/Setup/PicoSetup.html) is also a nice resource.
+
 
 
 ### MacOS
@@ -117,26 +118,48 @@ This is how we can tie the CMake build system into VSCode. One reason I like thi
 
 - [Learn Embedded Systems - YouTube Channel](https://www.youtube.com/@LowLevelLearning/featured)
 	- [Setting Up Pico Dev VSCode](https://www.youtube.com/watch?v=mUF9xjDtFfY)
+
 	- [FreeRTOS Dev on Pico and VSCode](https://www.youtube.com/watch?v=jCZxStjzGA8&list=RDCMUCFJibhZ9FOjbsZIr6AxR0AQ&start_radio=1&rv=jCZxStjzGA8)
 		- [Blog post](https://learnembeddedsystems.co.uk/freertos-on-rp2040-boards-pi-pico-etc-using-vscode)
+
 - [Low Level Learning - Raspberry Pi Pico Series](https://www.youtube.com/watch?v=JhajoAyP8e4&list=PLc7W4b0WHTAV6EYRVayb9c9dEsq-NeXAt) on youTube provides some information on getting build environment together
+
 - Pico-W References
 	- This general tutorial on on [Programming the Pico W](https://www.electromaker.io/blog/article/electromaker-educator-getting-started-with-the-pico-w) may be useful to get started.
+
 	- This [Getting Started with Pic W SDK Dev](https://www.electromaker.io/blog/article/getting-started-with-the-raspberry-pi-pico-w-cc-sdk) was usefull to pick out some nuances about the Pico W board.
+
 - General Setup Resources
 	- [Firmware Dev with VSCode and CMake](https://www.meoworkshop.org/firmware-dev-with-vs-code-and-cmake/)
 		- this is a quick rundown on setting up VSCode to integrate CMake, building projects using Tasks, and setting up debugging through Launch settings
+
 	- [Pico and FreeRTOS](https://blog.smittytone.net/2022/02/24/how-to-use-freertos-with-the-raspberry-pi-pico/) is a nice tutorial on using Pico SDK with the FreeRTOS kernel.
+
 	- [Using FreeRTOS with Pico](https://embeddedcomputing.com/technology/open-source/linux-freertos-related/using-freertos-with-the-raspberry-pi-pico)
 		- this resource offers some basics for installing tools on Windows, MacOS, and Linux
+
+	- [FreeRTOS: SMP Demo for Pico](https://freertos.org/smp-demos-for-the-raspberry-pi-pico-board.html)
+		- A tutorial by FreeRTOS on dual-core setup for the Rasperry Pi Pico's RD2040 chip
+	
+	- [Setting up Dev Envoronment on Windows](https://vanhunteradams.com/Pico/Setup/PicoSetup.html)
+
 - JLink Debugger References
 	- [JLink Hardware Interface](https://www.segger.com/products/debug-probes/j-link/technology/interface-description/)
+
 	- [JLink Configuration in VSCode](https://github.com/Marus/cortex-debug/wiki/J-Link-Specific-Configuration)
+
 	- [Flashing a Device with JLink and OpenOCD](https://machinehum.medium.com/flashing-the-rp2040-with-a-jlink-and-openocd-b5c6806d51c2)
-	- 
+
 - Visaul Studio Code References
 	- [Tasks in VSCode](https://code.visualstudio.com/docs/editor/tasks)
+
 	- [Configuring C/C++ in VSCode](https://code.visualstudio.com/docs/cpp/config-msvc)
+	
 	- Segger's notes on [Setting up Jlink in VSCode](https://wiki.segger.com/J-Link_Visual_Studio_Code)
+
 - FreeRTOS Resources
+	- [The FreeRTOS Kernel Reference](https://freertos.org/RTOS.html)
+
 	- [FreeRTOS Quick Start Guide](https://www.freertos.org/FreeRTOS-quick-start-guide.html)
+
+	- For use with other chips, this [Port Guide](https://freertos.org/differences-between-officially-supported-and-contributed-FreeRTOS-code.html) can help identify what chips are already supported by FreeRTOS, as well as references for learning how to port.
