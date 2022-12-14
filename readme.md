@@ -1,14 +1,23 @@
 # Building the Development Environment
 
-The goal here is to build the development system that can be used for cross-target development on Cortex-M devices. This will be done on Visual Studio Code. 
+The goal here is to build the development toolchain that can be used for cross-target development on the Raspberry Pi Pico W board. The Pico-W board houses the RP2040 and is the Foundation's first in-house IC build. It is a dual-core Cortex-M0+ chip. The Pico-W board offers a number of feature, including a Wifi and Bluetooth chip for wirelss communications.
 
-[MeowWorkshop](https://www.meoworkshop.org/firmware-dev-with-vs-code-and-cmake/) offers a nice brekdown of the setting up cmake, build tasks in vscode, and little on setting up debugging. This was one of the main resources, though others were used to supplement various sections.
+> Tip
+>
+> Most tutorials found around the time this tuorial originated (Nov 2022) were for the original Pico board. The original board did not include the wireless chip and there some nuances to using this chip that are different from the original. A good example is the on-board LED. It is ran through the wireless chip so using blinky examples from the original board will fail.
+
+This project integrates the Pico-SDK, the FreeRTOS kernel, and debugging through the Visual Studio Code IDE.
+
 
 The key steps include:
 - Installing Tools
 	- [Visual Studio Code](https://code.visualstudio.com)
-	- [pico-sdk](https://github.com/raspberrypi/pico-sdk)
-	- [pico-examples](https://github.com/raspberrypi/pico-examples)
+	- [Rasnperrby Pi Pico W]()
+		- [Pico W Overview](https://datasheets.raspberrypi.com/picow/pico-w-product-brief.pdf)
+		- [Datasheet](https://datasheets.raspberrypi.com/picow/pico-w-datasheet.pdf)
+		- [Getting Started with C/C++ Development](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
+		- [pico-sdk](https://github.com/raspberrypi/pico-sdk)
+		- [pico-examples](https://github.com/raspberrypi/pico-examples)
 	- [FreeRTOS](https://github.com/FreeRTOS/FreeRTOS-Kernel)
 	- CMake
 - Setting up system vars
@@ -21,6 +30,8 @@ The key steps include:
 - 
 
 ## Setting Up Your System
+
+[MeowWorkshop](https://www.meoworkshop.org/firmware-dev-with-vs-code-and-cmake/) offers a nice brekdown of the setting up cmake, build tasks in vscode, and little on setting up debugging. This was one of the main resources, though others were used to supplement various sections.
 
 Each OS (e.g. Windows, MacOS, Linux) require their own unique setups. Some of those necessities are presented below.
 
@@ -46,10 +57,14 @@ Once installed, install the following packages:
 
 NOTE: Git should already be installed (comes with MacOS)
 
+Some MacOS-specific references:
+- Here's a simple reference for [Pico Dev on MacOS](https://www.robertthasjohn.com/post/how-to-set-up-the-raspberry-pi-pico-for-development-on-macos)
+- Here's a simple example of [setting up and building pic-example projects](https://vanhunteradams.com/Pico/Setup/PicoSetupMac.html)
+
 
 ### System Vars
 
-Some system vars need to be installed. The provided VSCode resources are being built to be OS-agnostic and user-agnostic. This is because some resources could be different on a given system or for a given user. For Windows, 
+Some system vars need to be installed. The provided VSCode resources are being built to be OS-agnostic and user-agnostic. This is because some resources could be different on a given system or for a given user. 
 
 1. PICO_SDK_PATH
 	- set this to the path to the root path of the pico lib
@@ -58,6 +73,7 @@ Some system vars need to be installed. The provided VSCode resources are being b
 1. SEGGER_PATH
 	- set this to the filder with all Segger tools (e.g. JLink)
 
+For Windows OS systems, these should be installed throught the Viscual Studio Developer Command Prompt.
 
 ## Setting up VSCode
 
@@ -92,3 +108,35 @@ This is how we can tie the CMake build system into VSCode. One reason I like thi
 
 - [J-Link drivers](https://www.segger.com/downloads/jlink/)
 - 
+
+
+
+
+
+# References
+
+- [Learn Embedded Systems - YouTube Channel](https://www.youtube.com/@LowLevelLearning/featured)
+	- [Setting Up Pico Dev VSCode](https://www.youtube.com/watch?v=mUF9xjDtFfY)
+	- [FreeRTOS Dev on Pico and VSCode](https://www.youtube.com/watch?v=jCZxStjzGA8&list=RDCMUCFJibhZ9FOjbsZIr6AxR0AQ&start_radio=1&rv=jCZxStjzGA8)
+		- [Blog post](https://learnembeddedsystems.co.uk/freertos-on-rp2040-boards-pi-pico-etc-using-vscode)
+- [Low Level Learning - Raspberry Pi Pico Series](https://www.youtube.com/watch?v=JhajoAyP8e4&list=PLc7W4b0WHTAV6EYRVayb9c9dEsq-NeXAt) on youTube provides some information on getting build environment together
+- Pico-W References
+	- This general tutorial on on [Programming the Pico W](https://www.electromaker.io/blog/article/electromaker-educator-getting-started-with-the-pico-w) may be useful to get started.
+	- This [Getting Started with Pic W SDK Dev](https://www.electromaker.io/blog/article/getting-started-with-the-raspberry-pi-pico-w-cc-sdk) was usefull to pick out some nuances about the Pico W board.
+- General Setup Resources
+	- [Firmware Dev with VSCode and CMake](https://www.meoworkshop.org/firmware-dev-with-vs-code-and-cmake/)
+		- this is a quick rundown on setting up VSCode to integrate CMake, building projects using Tasks, and setting up debugging through Launch settings
+	- [Pico and FreeRTOS](https://blog.smittytone.net/2022/02/24/how-to-use-freertos-with-the-raspberry-pi-pico/) is a nice tutorial on using Pico SDK with the FreeRTOS kernel.
+	- [Using FreeRTOS with Pico](https://embeddedcomputing.com/technology/open-source/linux-freertos-related/using-freertos-with-the-raspberry-pi-pico)
+		- this resource offers some basics for installing tools on Windows, MacOS, and Linux
+- JLink Debugger References
+	- [JLink Hardware Interface](https://www.segger.com/products/debug-probes/j-link/technology/interface-description/)
+	- [JLink Configuration in VSCode](https://github.com/Marus/cortex-debug/wiki/J-Link-Specific-Configuration)
+	- [Flashing a Device with JLink and OpenOCD](https://machinehum.medium.com/flashing-the-rp2040-with-a-jlink-and-openocd-b5c6806d51c2)
+	- 
+- Visaul Studio Code References
+	- [Tasks in VSCode](https://code.visualstudio.com/docs/editor/tasks)
+	- [Configuring C/C++ in VSCode](https://code.visualstudio.com/docs/cpp/config-msvc)
+	- Segger's notes on [Setting up Jlink in VSCode](https://wiki.segger.com/J-Link_Visual_Studio_Code)
+- FreeRTOS Resources
+	- [FreeRTOS Quick Start Guide](https://www.freertos.org/FreeRTOS-quick-start-guide.html)
